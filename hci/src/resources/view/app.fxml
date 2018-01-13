@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" stylesheets="@../style/welcome_view_style.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppViewController">
+  <tabs>
+    <Tab fx:id="tab_1">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btn_left" mnemonicParsing="false" onAction="#handle_btn_left" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0">
+                     <graphic>
+                        <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/arrow_left.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="close_btn" mnemonicParsing="false" onAction="#handle_btn_close" prefHeight="48.0" prefWidth="29.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <graphic>
+                        <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/close_btn.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children></AnchorPane>
+      </content>
+         <graphic>
+            <ImageView fitHeight="73.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/tv.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+    </Tab>
+    <Tab fx:id="tab_2">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane prefHeight="335.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <center>
+                        <AnchorPane fx:id="content_exercitii" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ImageView opacity="0.32" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <image>
+                                    <Image url="@../img/wallpaper.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="btn_ex1" layoutX="213.0" layoutY="71.0" mnemonicParsing="false" onAction="#handle_btn_ex1" prefHeight="119.0" prefWidth="82.0">
+                                 <font>
+                                    <Font name="Arial Bold" size="27.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="228.0" fitWidth="248.0" pickOnBounds="true">
+                                       <image>
+                                          <Image url="@../img/apple_btn1.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="btn_ex2" layoutX="573.0" layoutY="71.0" mnemonicParsing="false" onAction="#handle_btn_ex2" prefHeight="167.0" prefWidth="184.0">
+                                 <graphic>
+                                    <ImageView fitHeight="287.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/apple_btn2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="btn_ex3" layoutX="901.0" layoutY="70.0" mnemonicParsing="false" onAction="#handle_btn_ex3" prefHeight="171.0" prefWidth="187.0">
+                                 <graphic>
+                                    <ImageView fitHeight="241.0" fitWidth="249.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/apple_btn3.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="btn_ex4" layoutX="220.0" layoutY="374.0" mnemonicParsing="false" onAction="#handle_btn_ex4" prefHeight="160.0" prefWidth="213.0">
+                                 <graphic>
+                                    <ImageView fitHeight="270.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/grape_btn1.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="btn_ex5" layoutX="573.0" layoutY="374.0" mnemonicParsing="false" onAction="#handle_btn_ex5">
+                                 <graphic>
+                                    <ImageView fitHeight="268.0" fitWidth="289.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/grape_btn2.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="btn_ex6" layoutX="907.0" layoutY="374.0" mnemonicParsing="false" onAction="#handle_btn_ex6" prefHeight="267.0" prefWidth="249.0">
+                                 <graphic>
+                                    <ImageView fitHeight="268.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/grape_btn3.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic></Button>
+                              <Button fx:id="btn_left" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle_btn_left" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="50.0">
+                                 <graphic>
+                                    <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/arrow_left.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="close_btn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handle_btn_close" prefHeight="48.0" prefWidth="29.0" AnchorPane.rightAnchor="570.0" AnchorPane.topAnchor="10.0">
+                                 <graphic>
+                                    <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/close_btn.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children></AnchorPane>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+      </content>
+         <graphic>
+            <ImageView fitHeight="44.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/ok_apple.jpg" />
+               </image>
+            </ImageView>
+         </graphic>
+    </Tab>
+  </tabs>
+</TabPane>

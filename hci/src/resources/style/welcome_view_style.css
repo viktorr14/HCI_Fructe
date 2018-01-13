@@ -1,0 +1,54 @@
+#pane {
+    -fx-background-image: url("../img/wallpaper.jpg");
+    -fx-background-size: cover;
+}
+
+/*#start_button {*/
+    /*-fx-background-radius: 30;*/
+    /*-fx-background-insets: 0,1,2,3,0;*/
+    /*-fx-text-fill: floralwhite;*/
+    /*-fx-font-weight: bold;*/
+    /*-fx-font-size: 50px;*/
+    /*-fx-padding: 10 20 10 20;*/
+    /*-fx-background-color: darkgreen;*/
+/*}*/
+
+/*#start_button:hover {*/
+    /*-fx-background-color: green;*/
+/*}*/
+
+.tab-pane .tab{
+    -fx-background-color: whitesmoke;
+}
+
+.tab-pane .tab:selected{
+    -fx-background-color: floralwhite;
+}
+
+.tab:selected .focus-indicator {
+    -fx-border-radius: 10 10 0 0, 10 10 0 0;
+    -fx-border-insets: -6 -9 -8 -8, -5 -8 -7 -7;
+}
+
+.tab-header-area .tab{
+    -fx-padding: 20 25;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.tab .tab-label {
+    -fx-alignment: CENTER;
+    -fx-text-fill: black;
+    -fx-font-size: 24px;
+    -fx-font-family: "Times New Roman";
+}
+
+.tab:selected .tab-label {
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+}
+
+#btn_mar_mare, #btn_mar_mic, #btn_mar_rosu, #btn_mar_verde, #btn_mar_galben, #btn_ex1, #btn_ex2, #btn_ex3, #btn_ex4, #btn_ex5, #btn_ex6, #btn_multime_mere, #restart_button, #btn_multime_struguri, #btn_cos1, #btn_cos2, #btn_cos3, #btn_6_in, #btn_6_langa, #btn_6_pe, #btn_6_sub, #btn_left, #btn_right, #close_btn, #close_button, #start_button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: transparent;
+}

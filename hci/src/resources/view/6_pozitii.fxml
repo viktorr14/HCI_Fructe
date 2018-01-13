@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pane_ex" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../style/welcome_view_style.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ex6ViewController">
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="373.0" layoutY="201.0" text="3. Alege strugurele de pe masa" textAlignment="CENTER" textFill="#460202" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="50.0">
+                    <font>
+                        <Font name="Arial Bold" size="64.0" />
+                    </font>
+                </Label>
+            <ImageView fitHeight="536.0" fitWidth="808.0" layoutX="205.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/table2.gif" />
+               </image>
+            </ImageView>
+                <Button fx:id="btn_6_langa" layoutX="884.0" layoutY="456.0" mnemonicParsing="false" onAction="#handle_wrong" prefHeight="196.0" prefWidth="108.0" AnchorPane.leftAnchor="884.0">
+               <graphic>
+                        <ImageView fitHeight="189.0" fitWidth="232.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/strugure.png" />
+                            </image>
+                        </ImageView>
+               </graphic>
+                </Button>
+                <Button fx:id="btn_6_in" layoutX="735.0" layoutY="310.0" mnemonicParsing="false" onAction="#handle_wrong" prefHeight="180.0" prefWidth="95.0" AnchorPane.leftAnchor="735.0">
+               <graphic>
+                        <ImageView fitHeight="186.0" fitWidth="278.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/strugure.png" />
+                            </image>
+                        </ImageView>
+               </graphic>
+                </Button>
+                <Button fx:id="btn_6_pe" layoutX="347.0" layoutY="194.0" mnemonicParsing="false" onAction="#handle_btn_6_pe" prefHeight="200.0" prefWidth="158.0" AnchorPane.bottomAnchor="406.0" AnchorPane.leftAnchor="347.0">
+               <graphic>
+                        <ImageView fitHeight="190.0" fitWidth="219.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../img/strugure.png" />
+                            </image>
+                        </ImageView>
+               </graphic>
+                </Button>
+            <Button fx:id="btn_6_sub" layoutX="380.0" layoutY="446.0" mnemonicParsing="false" onAction="#handle_wrong">
+               <graphic>
+                  <ImageView fitHeight="179.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/strugure.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_left" mnemonicParsing="false" onAction="#handle_btn_left" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/arrow_left.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="btn_right" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0" visible="false" onAction="#handle_btn_right" AnchorPane.bottomAnchor="350.0" AnchorPane.rightAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/arrow_right.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="close_btn" mnemonicParsing="false" onAction="#handle_btn_close" prefHeight="48.0" prefWidth="29.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/close_btn.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+    </center>
+</BorderPane>
