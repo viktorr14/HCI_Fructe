@@ -47,7 +47,7 @@
     -fx-font-weight: bold;
 }
 
-#btn_mar_mare, #btn_mar_mic, #btn_mar_rosu, #btn_mar_verde, #btn_mar_galben, #btn_ex1, #btn_ex2, #btn_ex3, #btn_ex4, #btn_ex5, #btn_ex6, #btn_multime_mere, #restart_button, #btn_multime_struguri, #btn_cos1, #btn_cos2, #btn_cos3, #btn_6_in, #btn_6_langa, #btn_6_pe, #btn_6_sub, #btn_left, #btn_right, #close_btn, #close_button, #start_button {
+#btn_mar_mare, #btn_mar_mic, #btn_mar_rosu, #btn_mar_verde, #btn_mar_galben, #btn_ex1, #btn_ex2, #btn_ex3, #btn_ex4, #btn_ex5, #btn_ex6, #btn_multime_mere, #restart_button, #btn_multime_struguri, #btn_cos1, #btn_cos2, #btn_cos3, #btn_6_in, #btn_6_langa, #btn_6_pe, #btn_6_sub, #btn_left, #btn_right, #close_btn, #close_button, #start_button, #btn_play_video, #btn_stop_video {
     -fx-background-color: transparent;
     -fx-border-color: transparent;
     -fx-text-fill: transparent;

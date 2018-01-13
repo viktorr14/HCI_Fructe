@@ -18,7 +18,7 @@
   <children>
     <ImageView fitHeight="125.0" fitWidth="255.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="TOP">
       <image>
-        <Image url="@../img/ok_apple.jpg" />
+        <Image url="@../img/ok_apple.png" />
       </image>
          <GridPane.margin>
             <Insets top="20.0" />
