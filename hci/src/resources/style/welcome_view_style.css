@@ -4,24 +4,24 @@
 }
 
 /*#start_button {*/
-    /*-fx-background-radius: 30;*/
-    /*-fx-background-insets: 0,1,2,3,0;*/
-    /*-fx-text-fill: floralwhite;*/
-    /*-fx-font-weight: bold;*/
-    /*-fx-font-size: 50px;*/
-    /*-fx-padding: 10 20 10 20;*/
-    /*-fx-background-color: darkgreen;*/
+/*-fx-background-radius: 30;*/
+/*-fx-background-insets: 0,1,2,3,0;*/
+/*-fx-text-fill: floralwhite;*/
+/*-fx-font-weight: bold;*/
+/*-fx-font-size: 50px;*/
+/*-fx-padding: 10 20 10 20;*/
+/*-fx-background-color: darkgreen;*/
 /*}*/
 
 /*#start_button:hover {*/
-    /*-fx-background-color: green;*/
+/*-fx-background-color: green;*/
 /*}*/
 
-.tab-pane .tab{
+.tab-pane .tab {
     -fx-background-color: whitesmoke;
 }
 
-.tab-pane .tab:selected{
+.tab-pane .tab:selected {
     -fx-background-color: floralwhite;
 }
 
@@ -30,7 +30,7 @@
     -fx-border-insets: -6 -9 -8 -8, -5 -8 -7 -7;
 }
 
-.tab-header-area .tab{
+.tab-header-area .tab {
     -fx-padding: 20 25;
     -fx-background-radius: 10 10 0 0;
 }

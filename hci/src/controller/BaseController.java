@@ -6,16 +6,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.media.AudioClip;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
 
 public class BaseController {
     private Scene baseScene;
     private Stage baseStage;
+    private AudioClip audioClip;
 
     public void setBaseScene(Scene baseScene) {
         this.baseScene = baseScene;
@@ -56,12 +54,20 @@ public class BaseController {
     }
 
     void play_sound(String musicFile) {
+        stop_sound();
         String path = String.valueOf(getClass().getResource(musicFile));
-        AudioClip sound = new AudioClip(path);
-        sound.play();
+        audioClip = new AudioClip(path);
+        audioClip.play();
     }
 
-    void show_app_page(Button btn_left){
+    void stop_sound() {
+        if (audioClip != null) {
+            audioClip.stop();
+        }
+    }
+
+    void show_app_page(Button btn_left) {
+        stop_sound();
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(ClassLoader.getSystemResource("resources/view/app.fxml"));
@@ -82,11 +88,13 @@ public class BaseController {
     }
 
     void close_app(Button close_btn) {
+        stop_sound();
         Stage stage = (Stage) close_btn.getScene().getWindow();
         stage.close();
     }
 
     void show_next_exercise(String file, Button btn_right) {
+        stop_sound();
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(ClassLoader.getSystemResource(file));
@@ -104,7 +112,5 @@ public class BaseController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
-
 }

@@ -65,9 +65,9 @@ public class AppViewController extends BaseController {
     HBox video_controls_pane;
     @FXML
     VBox video_box;
-    MediaPlayer media_player;
-    Duration video_duration;
-    InvalidationListener progressListener;
+    private MediaPlayer media_player;
+    private Duration video_duration;
+    private InvalidationListener progressListener;
 
     public AppViewController() {
         super();
@@ -75,8 +75,6 @@ public class AppViewController extends BaseController {
 
     @FXML
     public void initialize() {
-        play_sound("/resources/sounds/app.mp3");
-
         initializeVideoPlayer();
 
         btn_ex1.addEventHandler(MouseEvent.MOUSE_ENTERED,
@@ -116,7 +114,6 @@ public class AppViewController extends BaseController {
                 media_player.seek(video_duration.multiply(slider_video_progress.getValue() / 100.0));
             }
         });
-
     }
 
     private void updatePlayerControls() {
@@ -232,6 +229,7 @@ public class AppViewController extends BaseController {
     }
 
     private void change_scene(String file) throws IOException {
+        stop_sound();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ClassLoader.getSystemResource(file));
 
@@ -271,8 +269,11 @@ public class AppViewController extends BaseController {
 
     @FXML
     public void handle_tab_selection_changed() {
-        if(tab_2.isSelected()) {
+        if (tab_1.isSelected()) {
+            stop_sound();
+        } else {
             pause_video();
+            play_sound("/resources/sounds/app.mp3");
         }
     }
 
