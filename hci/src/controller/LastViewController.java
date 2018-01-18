@@ -35,8 +35,11 @@ public class LastViewController extends BaseController {
             loader.setLocation(ClassLoader.getSystemResource("resources/view/app.fxml"));
 
             Stage stage = (Stage) close_btn.getScene().getWindow();
+            stage.setMinHeight(450);
+            stage.setMinWidth(600);
             Parent root = loader.load();
             AppViewController controller = loader.getController();
+
             Scene scene = new Scene(root);
             stage.setScene(scene);
             stage.setFullScreen(true);

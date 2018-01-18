@@ -1,50 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="pane_ex" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../style/welcome_view_style.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ex3ViewController">
-    <center>
-        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <Button fx:id="btn_multe" layoutX="189.0" layoutY="190.0" mnemonicParsing="false" onAction="#handle_btn_multe" prefHeight="145.0" prefWidth="115.0" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="50.0">
-               <graphic>
-                        <ImageView fitHeight="364.0" fitWidth="734.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../img/basket1.png" />
-                            </image>
-                        </ImageView>
-               </graphic>
+
+<VBox minHeight="600.0" minWidth="800.0" stylesheets="@../style/welcome_view_style.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ex3ViewController">
+   <children>
+      <HBox fillHeight="false">
+         <children>
+            <Button fx:id="btn_left" mnemonicParsing="false" onAction="#handle_btn_left" styleClass="navigation_button_left" />
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button fx:id="close_btn" mnemonicParsing="false" onAction="#handle_btn_close" prefHeight="48.0" prefWidth="29.0" styleClass="close_button" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+         </VBox.margin>
+      </HBox>
+          <Label text="3. Alege coșul cu cele mai multe mere" textAlignment="CENTER" textFill="#460202">
+              <font>
+                  <Font name="Arial Bold" size="64.0" />
+              </font>
+          </Label>
+      <HBox alignment="CENTER" VBox.vgrow="ALWAYS">
+         <children>
+                <Button fx:id="btn_multe" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handle_btn_multe" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+               </HBox.margin>
                 </Button>
-                <Button fx:id="btn_putine" layoutX="500.0" layoutY="189.0" mnemonicParsing="false" onAction="#handle_wrong" prefHeight="153.0" prefWidth="215.0" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="650.0">
-                    <graphic>
-                        <ImageView fitHeight="364.0" fitWidth="734.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../img/basket2.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
+                <Button fx:id="btn_putine" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handle_wrong" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets bottom="24.0" left="24.0" right="24.0" top="24.0" />
+               </HBox.margin>
                 </Button>
-                <Label layoutX="373.0" layoutY="201.0" text="3. Alege cosul cu cele mai multe mere" textAlignment="CENTER" textFill="#460202" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="50.0">
-                    <font>
-                        <Font name="Arial Bold" size="64.0" />
-                    </font>
-                </Label>
-            <Button fx:id="btn_left" mnemonicParsing="false" onAction="#handle_btn_left" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0">
-               <graphic>
-                  <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/arrow_left.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btn_right" mnemonicParsing="false" prefHeight="52.0" prefWidth="75.0"  onAction="#handle_btn_right" visible="false" AnchorPane.bottomAnchor="350.0" AnchorPane.rightAnchor="0.0">
+         </children>
+      </HBox>
+      <AnchorPane>
+         <children>
+            <Button fx:id="btn_right" mnemonicParsing="false" onAction="#handle_btn_right" styleClass="navigation_button_right" visible="false" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0">
                <graphic>
                   <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -53,16 +54,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="close_btn" mnemonicParsing="false" onAction="#handle_btn_close" prefHeight="48.0" prefWidth="29.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-               <graphic>
-                  <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/close_btn.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            </children>
-        </AnchorPane>
-    </center>
-</BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
