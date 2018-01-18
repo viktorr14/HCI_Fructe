@@ -6,15 +6,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.Slider;
-import javafx.scene.control.Tab;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaPlayer.Status;
@@ -52,19 +46,22 @@ public class AppViewController extends BaseController {
     @FXML
     Button btn_play_video;
     @FXML
-    ImageView btn_play_image_view;
-    @FXML
     Button btn_stop_video;
     @FXML
     Label label_video_progress;
     @FXML
     Slider slider_video_progress;
     @FXML
+    ProgressBar slider_progress_bar;
+    @FXML
+    StackPane video_progress_pane;
+    @FXML
     MediaView video_view;
     @FXML
-    HBox video_controls_pane;
+    Pane video_container;
     @FXML
-    VBox video_box;
+    HBox video_controls_pane;
+
     private MediaPlayer media_player;
     private Duration video_duration;
     private InvalidationListener progressListener;
@@ -95,6 +92,14 @@ public class AppViewController extends BaseController {
         media_player = new MediaPlayer(new Media(String.valueOf(getClass().getResource("/resources/video/povestea.mp4"))));
         video_view.setMediaPlayer(media_player);
 
+        video_container.layoutBoundsProperty().addListener((observable, oldValue, newValue) -> {
+            System.out.println(newValue.getWidth() + "x" + newValue.getHeight());
+            video_view.setFitWidth(newValue.getWidth());
+            video_view.setFitHeight(newValue.getHeight());
+        });
+
+        slider_progress_bar.prefWidthProperty().bind(video_progress_pane.widthProperty().subtract(12));
+
         media_player.setOnReady(() -> {
             video_duration = media_player.getMedia().getDuration();
             updatePlayerControls();
@@ -110,10 +115,14 @@ public class AppViewController extends BaseController {
         media_player.currentTimeProperty().addListener(progressListener);
 
         slider_video_progress.valueProperty().addListener(observable -> {
-            if (slider_video_progress.isValueChanging()) {
-                media_player.seek(video_duration.multiply(slider_video_progress.getValue() / 100.0));
+            if (slider_video_progress.isPressed()) {
+                double progress = slider_video_progress.getValue() / 100.0;
+                media_player.seek(video_duration.multiply(progress));
+                slider_progress_bar.setProgress(progress);
             }
         });
+
+
     }
 
     private void updatePlayerControls() {
@@ -122,7 +131,9 @@ public class AppViewController extends BaseController {
             label_video_progress.setText(computeProgress(currentTime));
             slider_video_progress.setDisable(video_duration.isUnknown());
             if (!slider_video_progress.isValueChanging()) {
-                slider_video_progress.setValue(currentTime.divide(video_duration.toMillis()).toMillis() * 100);
+                double progess = currentTime.divide(video_duration.toMillis()).toMillis() * 100;
+                slider_video_progress.setValue(progess);
+                slider_progress_bar.setProgress(progess / 100);
             }
         });
     }
@@ -134,7 +145,7 @@ public class AppViewController extends BaseController {
         int total = (int) Math.floor(video_duration.toSeconds());
         int totalMinutes = total / 60;
         int totalSeconds = total % 60;
-        return String.format("%02d:%02d / %02d:%02d", elapsedMinutes, elapsedSeconds, totalMinutes, totalSeconds);
+        return String.format("%02d:%02d/%02d:%02d", elapsedMinutes, elapsedSeconds, totalMinutes, totalSeconds);
     }
 
     // app screen
@@ -214,26 +225,39 @@ public class AppViewController extends BaseController {
 
     private void play_video() {
         media_player.play();
-        btn_play_image_view.setImage(new Image(String.valueOf(getClass().getResource("/resources/img/pause_video_btn.png"))));
+        set_play_button_pause_image(true);
     }
 
     private void pause_video() {
         media_player.pause();
-        btn_play_image_view.setImage(new Image(String.valueOf(getClass().getResource("/resources/img/play_video_btn.png"))));
+        set_play_button_pause_image(false);
     }
 
     @FXML
     void handle_btn_stop_video() {
         media_player.stop();
-        btn_play_image_view.setImage(new Image(String.valueOf(getClass().getResource("/resources/img/play_video_btn.png"))));
+        set_play_button_pause_image(false);
+    }
+
+    private void set_play_button_pause_image(boolean pause) {
+        String path = "resources/img/play_video_btn.png";
+        if (pause) {
+            path = "resources/img/pause_video_btn.png";
+        }
+        btn_play_video.setStyle(
+                "-fx-background-image: url(" + path + ");\n" +
+                        "-fx-background-size: contain;\n" +
+                        "-fx-background-position: center;"
+        );
     }
 
     private void change_scene(String file) throws IOException {
         stop_sound();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ClassLoader.getSystemResource(file));
-
         Stage stage = (Stage) btn_ex1.getScene().getWindow();
+        stage.setMinHeight(450);
+        stage.setMinWidth(600);
         Parent root = loader.load();
         BaseController controller = loader.getController();
         Scene scene = new Scene(root);
@@ -252,6 +276,8 @@ public class AppViewController extends BaseController {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(ClassLoader.getSystemResource("resources/view/welcome.fxml"));
             Stage stage = (Stage) btn_left.getScene().getWindow();
+            stage.setMinHeight(450);
+            stage.setMinWidth(600);
             Parent root = loader.load();
 
             WelcomeViewController controller = loader.getController();

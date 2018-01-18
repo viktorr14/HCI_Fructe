@@ -30,7 +30,7 @@
                         </ImageView>
                     </graphic>
                 </Button>
-                <Label layoutX="373.0" layoutY="201.0" text="1. Alege multimea strugurilor" textAlignment="CENTER" textFill="#460202" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="50.0">
+                <Label layoutX="373.0" layoutY="201.0" text="1. Alege mulțimea strugurilor" textAlignment="CENTER" textFill="#460202" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="50.0">
                     <font>
                         <Font name="Arial Bold" size="64.0" />
                     </font>

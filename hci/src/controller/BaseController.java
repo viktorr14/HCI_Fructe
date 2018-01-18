@@ -99,6 +99,8 @@ public class BaseController {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(ClassLoader.getSystemResource(file));
             Stage stage = (Stage) btn_right.getScene().getWindow();
+            stage.setMinHeight(450);
+            stage.setMinWidth(600);
             Parent root = loader.load();
 
             BaseController controller = loader.getController();

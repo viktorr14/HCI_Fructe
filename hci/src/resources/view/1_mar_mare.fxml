@@ -1,73 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="pane_ex" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" stylesheets="@../style/welcome_view_style.css" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ex1ViewController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="648.0" fitWidth="831.0" layoutX="161.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="261.0">
-               <image>
-                  <Image url="@../img/basket.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="btn_mar_mare" layoutX="413.0" layoutY="139.0" mnemonicParsing="false" onAction="#handle_btn_mar_mare" prefHeight="318.0" prefWidth="270.0" AnchorPane.bottomAnchor="327.0" AnchorPane.leftAnchor="413.0">
-               <graphic>
-                  <ImageView fitHeight="324.0" fitWidth="399.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/red_apple.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btn_mar_mic" layoutX="742.0" layoutY="219.0" mnemonicParsing="false" onAction="#handle_wrong" prefHeight="189.0" prefWidth="199.0" AnchorPane.leftAnchor="742.0">
-               <graphic>
-                  <ImageView fitHeight="232.0" fitWidth="248.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/red_apple.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Label layoutX="373.0" layoutY="201.0" text="1. Alege din cos marul cel mai mare" textAlignment="CENTER" textFill="#460202" AnchorPane.leftAnchor="120.0" AnchorPane.topAnchor="50.0">
-               <font>
+<VBox alignment="CENTER" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" styleClass="white_pane" stylesheets="@../style/welcome_view_style.css" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ex1ViewController">
+    <children>
+        <HBox>
+            <children>
+                <Button fx:id="btn_left" mnemonicParsing="false" onAction="#handle_btn_left" styleClass="navigation_button_left" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button fx:id="close_btn" mnemonicParsing="false" onAction="#handle_btn_close" prefHeight="48.0" prefWidth="29.0" styleClass="close_button" />
+            </children>
+            <VBox.margin>
+                <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+            </VBox.margin>
+        </HBox>
+          <Label alignment="CENTER" contentDisplay="CENTER" text="1. Alege din coș mărul cel mai mare" textAlignment="CENTER" textFill="#460202">
+              <font>
                   <Font name="Arial Bold" size="64.0" />
-               </font>
-            </Label>
-            <Button fx:id="btn_left" layoutX="30.0" layoutY="737.0" mnemonicParsing="false" onAction="#handle_btn_left" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0">
-               <graphic>
-                  <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/arrow_left.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="btn_right" layoutX="1123.0" layoutY="601.0" mnemonicParsing="false" onAction="#handle_btn_right" prefHeight="52.0" prefWidth="75.0" visible="false" AnchorPane.bottomAnchor="350.0" AnchorPane.rightAnchor="0.0">
-               <graphic>
-                  <ImageView fitHeight="82.0" fitWidth="118.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/arrow_right.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-            <Button fx:id="close_btn" layoutX="1043.0" layoutY="71.0" mnemonicParsing="false" onAction="#handle_btn_close" prefHeight="48.0" prefWidth="29.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
-               <graphic>
-                  <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/close_btn.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </Button>
-         </children>
-      </AnchorPane>
-   </center>
-</BorderPane>
+              </font>
+         <padding>
+            <Insets bottom="4.0" />
+         </padding>
+          </Label>
+        <AnchorPane styleClass="basket_background_pane" VBox.vgrow="ALWAYS">
+            <children>
+            <HBox alignment="CENTER" spacing="6.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                      <Button fx:id="btn_mar_mare" maxHeight="300.0" maxWidth="270.0" mnemonicParsing="false" onAction="#handle_btn_mar_mare" HBox.hgrow="ALWAYS" />
+                      <Button fx:id="btn_mar_mic" maxHeight="250.0" maxWidth="210.0" mnemonicParsing="false" onAction="#handle_wrong" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets bottom="24.0" top="24.0" />
+                     </HBox.margin>
+                      </Button>
+               </children>
+            </HBox>
+                <Button fx:id="btn_right" mnemonicParsing="false" onAction="#handle_btn_right" prefHeight="52.0" prefWidth="75.0" styleClass="navigation_button_right" visible="false" AnchorPane.bottomAnchor="12.0" AnchorPane.rightAnchor="12.0" />
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

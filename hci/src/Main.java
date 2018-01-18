@@ -16,6 +16,8 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(ClassLoader.getSystemResource("resources/view/welcome.fxml"));
         Parent root = loader.load();
+        stage.setMinHeight(450);
+        stage.setMinWidth(600);
 //        AnchorPane root = new AnchorPane();
 //        loader.setLocation(ClassLoader.getSystemResource("resources.view/app.fxml"));
 //        TabPane root = new TabPane();

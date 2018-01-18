@@ -22,8 +22,11 @@ public class WelcomeViewController extends BaseController {
         loader.setLocation(ClassLoader.getSystemResource("resources/view/app.fxml"));
 
         Stage stage = (Stage) start_button.getScene().getWindow();
+        stage.setMinHeight(450);
+        stage.setMinWidth(600);
         Parent root = loader.load();
         AppViewController controller = loader.getController();
+
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setFullScreen(true);

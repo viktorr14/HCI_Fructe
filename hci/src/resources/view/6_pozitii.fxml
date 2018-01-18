@@ -12,7 +12,7 @@
     <center>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
             <children>
-                <Label layoutX="373.0" layoutY="201.0" text="3. Alege strugurele de pe masa" textAlignment="CENTER" textFill="#460202" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="50.0">
+                <Label layoutX="373.0" layoutY="201.0" text="3. Alege strugurele de pe masă" textAlignment="CENTER" textFill="#460202" AnchorPane.leftAnchor="160.0" AnchorPane.topAnchor="50.0">
                     <font>
                         <Font name="Arial Bold" size="64.0" />
                     </font>

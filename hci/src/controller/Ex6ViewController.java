@@ -53,6 +53,9 @@ public class Ex6ViewController extends BaseController {
             loader.setLocation(ClassLoader.getSystemResource("resources/view/last.fxml"));
 
             Stage stage = (Stage) btn_left.getScene().getWindow();
+            stage.setMinHeight(450);
+            stage.setMinWidth(600);
+
             Parent root = loader.load();
             BaseController controller = loader.getController();
             Scene scene = new Scene(root);
